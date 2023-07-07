@@ -16,7 +16,7 @@ pub fn build(b: *Build) void {
             lib.addCSourceFiles(&.{
                 "RtMidi.cpp",
                 "rtmidi_c.cpp",
-                }, &.{
+            }, &.{
                 "-std=c++11",
                 "-D__MACOSX_CORE__",
             });
@@ -29,13 +29,13 @@ pub fn build(b: *Build) void {
             lib.addCSourceFiles(&.{
                 "RtMidi.cpp",
                 "rtmidi_c.cpp",
-                }, &.{
+            }, &.{
                 "-std=c++11",
                 "-D__LINUX_ALSA__",
             });
             lib.addIncludePath("/usr/include");
-            lib.linkSystemLibrary("asoundlib");
-        }
+            lib.linkSystemLibrary("asound");
+        },
     }
     lib.linkLibCpp();
     lib.installHeader("rtmidi_c.h", "rtmidi/rtmidi_c.h");
