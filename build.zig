@@ -18,6 +18,7 @@ pub fn build(b: *Build) void {
                 "rtmidi_c.cpp",
             }, &.{
                 "-std=c++11",
+                "-DRTMIDI_EXPORT",
                 "-D__MACOSX_CORE__",
             });
             lib.linkFramework("CoreServices");
@@ -31,6 +32,7 @@ pub fn build(b: *Build) void {
                 "rtmidi_c.cpp",
             }, &.{
                 "-std=c++11",
+                "-DRTMIDI_EXPORT",
                 "-D__LINUX_ALSA__",
             });
             lib.addIncludePath("/usr/include");
