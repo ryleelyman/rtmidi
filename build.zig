@@ -35,7 +35,7 @@ pub fn build(b: *Build) void {
                 "-DRTMIDI_EXPORT",
                 "-D__LINUX_ALSA__",
             });
-            lib.addIncludePath("/usr/include");
+            lib.addIncludePath(.{ .cwd_relative = "/usr/include" });
             lib.linkSystemLibrary("asound");
         },
     }
