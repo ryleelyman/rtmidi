@@ -36,6 +36,7 @@ pub fn build(b: *Build) void {
                 "-D__LINUX_ALSA__",
             });
             lib.addIncludePath(.{ .cwd_relative = "/usr/include" });
+            lib.linkSystemLibraryPkgConfigOnly("alsa");
             lib.linkSystemLibrary("asound");
         },
     }
